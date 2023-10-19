@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JMK</title>
+
+    </head>
+    <body>
+        
+        <img src="/banner/banner.png" alt="Veebiprogrammeerimise kursuse bänner">
+        <h1>Eesti Film</h1>
+        <hr>
+        <ul>
+            <li> <a href="/eestifilm">Eesti Filmde avaleht</a></li>
+            <li> <a href="/">Avalehele</a></li>
+        </ul>
+        <hr>
+        <h2>Ütle mida tahad näha</h2>
+        <form method = 'POST'>
+            <label for="firstFilmInput">Filmitegelase eesnimi</label>
+            <input type="number" Film="firstFilmInput" id="firstFilmInput" placeholder="Selles kuni" required>
+            <br>
+            <label for="lastFilmInput">Filmitegelase eesnimi</label>
+            <input type="number" Film="lastFilmInput" id="lastFilmInput" placeholder="Selleni" required>
+            <br>
+            <input type="submit" Film="filmSubmit" value="Salvesta">
+        </form>
+        <h2>Filmid mida tahtsid näha</h2>
+        <ol>
+            <% filmlist.forEach(function(film){ %>
+                <li><%=film.title%>, toodetud <%=film.production_year%></li>
+            <%});%>
+        </ol>
+        <p><%= locals.notice || 'Ootel!' %></p> <!--locals võttab kohallike väärtuis teistest failidest-->
+    </body> <!-- || ütleb, et tee kas ühte või teist ehk if, else statement-->
+</body>
+</html>
